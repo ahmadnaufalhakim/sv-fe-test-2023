@@ -11,7 +11,7 @@ export const fetchArticles = async () => {
 }
 
 export const fetchArticle = async (id) => {
-  const resp = await fetch(`${BASE_URL}/articles/${id}`)
+  const resp = await fetch(`${BASE_URL}/article/${id}`)
 
   if (!resp.ok) {
     const respBody = await resp.json()
