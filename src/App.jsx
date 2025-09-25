@@ -4,6 +4,7 @@ import AllPosts from './pages/AllPosts'
 
 import './App.css'
 import AddNew from './pages/AddNew'
+import EditPost from './pages/EditPost'
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<AllPosts />} />
             <Route path="/add" element={<AddNew />} />
+            <Route path="/edit/:id" element={<EditPost />} />
           </Routes>
         </div>
       </Router>
