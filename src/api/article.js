@@ -1,7 +1,13 @@
 const BASE_URL = import.meta.VITA_API_BASE || "http://localhost:8080/api"
 
-export const fetchArticles = async () => {
-	const resp = await fetch(`${BASE_URL}/articles`)
+export const fetchArticles = async (limit, offset) => {
+	if (!limit) {
+    limit = 10
+  }
+  if (!offset) {
+    offset = 0
+  }
+  const resp = await fetch(`${BASE_URL}/articles/${limit}/${offset}`)
 
   if (!resp.ok) {
     const respBody = await resp.json()
