@@ -31,34 +31,6 @@ body {
   background: linear-gradient(135deg, #f7f8fa 0%, #e3f0ff 100%);
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-  color: #2d8cf0;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid #2d8cf0;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #e3f0ff;
-  color: #2d8cf0;
-  cursor: pointer;
-  transition: background 0.25s, border-color 0.25s;
-}
-button:hover {
-  background-color: #2d8cf0;
-  color: #fff;
-  border-color: #1e6bb8;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
 @media (prefers-color-scheme: light) {
   :root {
     color: #222;
