@@ -1,12 +1,8 @@
-import { useNavigate } from "react-router-dom";
-
 import PostForm from "../components/PostForm";
 
 import { createArticle } from "../api/article";
 
 const AddNew = () => {
-	const navigate = useNavigate()
-
 	const handleSubmit = async (post) => {
 		try {
       await createArticle(post)
