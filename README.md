@@ -1,16 +1,61 @@
-# React + Vite
+# Sharing Vision Frontend Test 2023
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React + Vite frontend app for managing posts (Published, Draft, Trashed) as part of the recruitment test at **Sharing Vision Indonesia**.  
+The frontend connects to a Golang backend ([sv-be-test-2023](https://github.com/ahmadnaufalhakim/sv-be-test-2023)).
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- **All Posts**: Tabs for published, draft, and trashed posts with table (title, category, actions).
+- **Edit Post**: Edit title, content, category. Save as draft or publish.
+- **Add New**: Form to create new post with draft/publish options.
+- **Trash**: Move posts to trash.
+- **Preview**: View published posts with pagination.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Project Structure
+```
+src/
+├── api/ # API handlers
+├── components/ # Reusable components (PostTable, PostForm, Pagination)
+├── pages/ # Pages (AllPosts, AddNew, EditPost, Preview)
+├── utils/ # Helper functions
+├── App.jsx # Router setup
+└── main.jsx # Entry point
+```
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## How to run
+
+### 1. Clone the repo
+```bash
+git clone https://github.com/ahmadnaufalhakim/sv-fe-test-2023.git
+cd sv-fe-test-2023
+```
+
+### 2. Install dependencies
+```bash
+npm install
+```
+
+### 3. Run the [backend](https://github.com/ahmadnaufalhakim/sv-be-test-2023)
+Make sure the Golang backend sv-be-test-2023 is running on `http://localhost:8080`
+```bash
+docker compose --env-file .env.sample up -d
+go run main.go
+```
+
+### 4. Run the frontend
+```bash
+npm run dev
+```
+
+---
+
+## Tech Stack
+- [React](https://react.dev)
+- [Vite](https://vite.dev)
+- [React Router](https://reactrouter.com)
+- [Tailwind CSS](https://tailwindcss.com)
