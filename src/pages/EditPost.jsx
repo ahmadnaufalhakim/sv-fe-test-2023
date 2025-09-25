@@ -19,8 +19,17 @@ const EditPost = () => {
   }
 
   const handleSubmit = async (updatedPost) => {
-    await updateArticle(id, updatedPost)
-    window.location.href = "/"
+    try {
+      await updateArticle(id, updatedPost)
+      alert(`Post "${updatedPost.title}" is successfully ${updatedPost.status}ed`)
+      window.location.href = "/"
+    } catch (err) {
+      let errStr = "";
+      for (const [key, value] of Object.entries(JSON.parse(err.message))) {
+        errStr += `${key}: ${value}\n`
+      }
+      alert(errStr)
+    }
   }
 
   return (
