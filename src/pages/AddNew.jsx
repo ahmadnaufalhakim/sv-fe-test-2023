@@ -6,7 +6,7 @@ const AddNew = () => {
 	const handleSubmit = async (post) => {
 		try {
       await createArticle(post)
-      alert(`Post "${post.title}" is successfully deleted`)
+      alert(`Post "${post.title}" is successfully created`)
       window.location.href = "/"
     } catch (err) {
       let errStr = "";
